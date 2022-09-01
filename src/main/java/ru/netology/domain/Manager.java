@@ -1,3 +1,5 @@
+package ru.netology.domain;
+
 public class Manager {
 
     private String[] movies = new String[0];

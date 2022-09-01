@@ -1,3 +1,5 @@
+package ru.netology.domain;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +13,7 @@ public class ManagerTest {
 
     //    Manager manager = new Manager();
     @Test
-    public void test1() {
+    public void shouldFindAll() {
 
         Manager manager = new Manager();
         manager.add(movie1);
@@ -70,6 +72,49 @@ public class ManagerTest {
                 movie3,
                 movie2,
                 movie1,
+
+        };
+        String[] actual = manager.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldFindLast2() {
+        Manager manager = new Manager(11);
+        manager.add(movie1);
+        manager.add(movie2);
+        manager.add(movie3);
+        manager.add(movie4);
+        manager.add(movie5);
+
+        String[] expected = {
+                movie5,
+                movie4,
+                movie3,
+                movie2,
+                movie1,
+
+        };
+        String[] actual = manager.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldFindLast3() {
+        Manager manager = new Manager(4);
+        manager.add(movie1);
+        manager.add(movie2);
+        manager.add(movie3);
+        manager.add(movie4);
+        manager.add(movie5);
+
+        String[] expected = {
+                movie5,
+                movie4,
+                movie3,
+                movie2,
 
         };
         String[] actual = manager.findLast();
